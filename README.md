@@ -28,20 +28,20 @@ pip install -r requirements.txt
 # Download and prepare dataset
 python scripts/download_kaggle_dataset.py
 
-# Train YOLOv8 model (Colab Pro optimized)
-python src/colab_pro_training.py
+# Train YOLOv8 model
+python src/train.py
 
 # Or use Jupyter notebook
-jupyter notebook notebooks/colab_pro_malaria_training_v2.ipynb
+jupyter notebook notebooks/malaria_training.ipynb
 ```
 
 ### Inference
 ```bash
 # Start inference service
-python src/inference_service_yolo.py
+python src/inference.py
 
 # Test API
-python src/test_api.py
+python src/test.py
 ```
 
 ### Docker Deployment
@@ -73,11 +73,14 @@ Performance exceeds clinical requirements:
 ```text
 malaria-detection/
 ├── 📁 src/                    # Core training and inference code
-│   ├── 🐍 colab_pro_training.py     # Main training script
-│   ├── 🐍 inference_service_yolo.py # Production API
+│   ├── 🐍 train.py                  # Main training script
+│   ├── 🐍 inference.py             # Production API
+│   ├── 🐍 export.py                # Model export utilities
+│   ├── 🐍 test.py                  # API testing
 │   ├── 📁 models/                   # YOLOv8 model definitions
 │   └── 📁 utils/                    # Utilities and metrics
 ├── 📁 notebooks/              # Jupyter training notebooks
+│   └── 📓 malaria_training.ipynb   # Main training notebook
 ├── 📁 scripts/               # Dataset preparation and release
 ├── 📁 deployment/           # Docker and monitoring setup
 ├── 📁 configs/             # Training configurations
