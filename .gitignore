@@ -47,10 +47,11 @@ data/
 *.tar.gz
 *.zip
 
-# Model files (too large for git)
+# Model files (too large for git - except training outputs)
 *.pt
 *.onnx
 *.torchscript
+!malaria_detection_training_output/models/*
 
 # Training outputs
 runs/
