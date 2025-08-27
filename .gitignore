@@ -51,7 +51,6 @@ data/
 *.pt
 *.onnx
 *.torchscript
-malaria_detection_pro_*/
 
 # Training outputs
 runs/
